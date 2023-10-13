@@ -1,0 +1,277 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #ffec00;
+  font-family: monospace;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffcc00;
+}
+
+.header img {
+  width: 175px;
+  height: 95px;
+}
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffcc00;
+}
+
+footer img {
+  width: 175px;
+  height: 95px;
+}
+
+.img-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  /* align-items: center; */
+  /* background-color: #c73734; */
+  background-color: #333;
+  padding: 20px 0px 20px 20px;
+}
+
+.img-container img {
+  width: 200px;
+  height: auto;
+  border-radius: 8px;
+}
+
+.lasha {
+  position: relative;
+}
+.lasha img {
+  opacity: 0.5;
+}
+
+.lasha img:hover {
+  opacity: 1;
+}
+
+.mirza {
+  position: relative;
+}
+.mirza img {
+  opacity: 0.5;
+}
+
+.mirza img:hover {
+  opacity: 1;
+}
+
+.jano {
+  position: relative;
+}
+.jano img {
+  opacity: 0.5;
+}
+
+.jano img:hover {
+  opacity: 1;
+}
+.kniaz {
+  position: relative;
+}
+.kniaz img {
+  opacity: 0.5;
+}
+
+.kniaz img:hover {
+  opacity: 1;
+}
+.toko {
+  position: relative;
+}
+
+.toko img {
+  opacity: 0.5;
+}
+
+.toko img:hover {
+  opacity: 1;
+}
+
+.about-lasha,
+.about-mirza,
+.about-jano,
+.about-kniaz,
+.about-toko {
+  color: #fff;
+  position: absolute;
+  left: 215px;
+  top: 5px;
+  font-size: 12px;
+  line-height: 17px;
+}
+
+.about-lasha :hover {
+  opacity: 0.5;
+}
+
+.about-mirza :hover {
+  opacity: 0.5;
+}
+.about-jano :hover {
+  opacity: 0.5;
+}
+.about-kniaz :hover {
+  opacity: 0.5;
+}
+.about-toko :hover {
+  opacity: 0.5;
+}
+
+.lasha-container,
+.mirza-container,
+.jano-container,
+.kniaz-container,
+.toko-container {
+  position: relative;
+}
+
+.home-sci {
+  position: absolute;
+  bottom: 90px;
+  right: 10px;
+  width: 150px;
+  display: flex;
+  justify-content: start;
+  gap: 10px;
+  z-index: 2;
+}
+
+.home-sci a {
+  /* position: relative; */
+  /* display: inline-flex; */
+  /* justify-content: center; */
+  /* align-items: center; */
+  width: 40px;
+  height: 40px;
+  /* background: transparent; */
+  /* border: 2px solid #00abf0; */
+  border-radius: 50%;
+  text-decoration: none;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.twit {
+  color: #00abf0;
+  font-size: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.facebook {
+  color: #0866ff;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 45px;
+}
+
+.instagram {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  color: #fff;
+  background: #f09433;
+  background: -moz-linear-gradient(
+    45deg,
+    #f09433 0%,
+    #e6683c 25%,
+    #dc2743 50%,
+    #cc2366 75%,
+    #bc1888 100%
+  );
+  background: -webkit-linear-gradient(
+    45deg,
+    #f09433 0%,
+    #e6683c 25%,
+    #dc2743 50%,
+    #cc2366 75%,
+    #bc1888 100%
+  );
+  background: linear-gradient(
+    45deg,
+    #f09433 0%,
+    #e6683c 25%,
+    #dc2743 50%,
+    #cc2366 75%,
+    #bc1888 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+}
+
+.home-sci a :hover {
+  opacity: 0.8;
+}
+
+.home-sci a:hover::before {
+  width: 100%;
+}
+
+@media (max-width: 500px) {
+  .img-container {
+    grid-template-columns: 1fr;
+    padding: 20px 0px 20px 20px;
+    gap: 20px;
+  }
+
+  .about-lasha,
+  .about-mirza,
+  .about-jano,
+  .about-kniaz,
+  .about-toko {
+    left: 210px;
+  }
+
+  .lasha img,
+  .mirza img,
+  .jano img,
+  .kniaz img,
+  .toko img {
+    opacity: 1;
+  }
+
+  .home-sci {
+    position: absolute;
+    bottom: 7px;
+    right: 0px;
+    width: 150px;
+    display: flex;
+    justify-content: start;
+    gap: 10px;
+    z-index: 2;
+  }
+
+  .home-sci a {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    text-decoration: none;
+    z-index: 1;
+    overflow: hidden;
+  }
+
+  .instagram {
+    font-size: 25px;
+  }
+
+  .facebook,
+  .twitter {
+    font-size: 30px;
+  }
+}
