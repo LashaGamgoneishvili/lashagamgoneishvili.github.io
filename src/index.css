@@ -5,8 +5,7 @@
 }
 
 body {
-  background-color: #ffec00;
-  font-family: monospace;
+  font-family: sans-serif;
 }
 
 .header {
@@ -20,6 +19,15 @@ body {
   width: 175px;
   height: 95px;
 }
+
+.section {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  background-color: #333;
+  padding: 32px 0px 20px 20px;
+  gap: 10px;
+}
+
 footer {
   display: flex;
   justify-content: center;
@@ -33,12 +41,7 @@ footer img {
 }
 
 .img-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  /* align-items: center; */
-  /* background-color: #c73734; */
   background-color: #333;
-  padding: 20px 0px 20px 20px;
 }
 
 .img-container img {
@@ -47,102 +50,40 @@ footer img {
   border-radius: 8px;
 }
 
-.lasha {
-  position: relative;
-}
-.lasha img {
-  opacity: 0.5;
-}
-
-.lasha img:hover {
-  opacity: 1;
-}
-
-.mirza {
-  position: relative;
-}
-.mirza img {
-  opacity: 0.5;
-}
-
-.mirza img:hover {
-  opacity: 1;
-}
-
-.jano {
-  position: relative;
-}
-.jano img {
-  opacity: 0.5;
-}
-
-.jano img:hover {
-  opacity: 1;
-}
-.kniaz {
-  position: relative;
-}
-.kniaz img {
-  opacity: 0.5;
-}
-
-.kniaz img:hover {
-  opacity: 1;
-}
-.toko {
+.student {
   position: relative;
 }
 
-.toko img {
+.student img {
   opacity: 0.5;
 }
-
-.toko img:hover {
+.student img:hover {
   opacity: 1;
 }
 
-.about-lasha,
-.about-mirza,
-.about-jano,
-.about-kniaz,
-.about-toko {
+.about-student {
   color: #fff;
-  position: absolute;
   left: 215px;
   top: 5px;
   font-size: 12px;
   line-height: 17px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 10px;
 }
 
-.about-lasha :hover {
-  opacity: 0.5;
-}
-
-.about-mirza :hover {
-  opacity: 0.5;
-}
-.about-jano :hover {
-  opacity: 0.5;
-}
-.about-kniaz :hover {
-  opacity: 0.5;
-}
-.about-toko :hover {
+.about-student p:hover {
   opacity: 0.5;
 }
 
-.lasha-container,
-.mirza-container,
-.jano-container,
-.kniaz-container,
-.toko-container {
-  position: relative;
+.student-container {
+  display: flex;
+  gap: 10px;
 }
 
 .home-sci {
-  position: absolute;
-  bottom: 90px;
-  right: 10px;
+  display: inline;
   width: 150px;
   display: flex;
   justify-content: start;
@@ -151,18 +92,15 @@ footer img {
 }
 
 .home-sci a {
-  /* position: relative; */
-  /* display: inline-flex; */
-  /* justify-content: center; */
-  /* align-items: center; */
   width: 40px;
   height: 40px;
-  /* background: transparent; */
-  /* border: 2px solid #00abf0; */
-  border-radius: 50%;
   text-decoration: none;
   z-index: 1;
   overflow: hidden;
+}
+
+.home-sci a:hover {
+  opacity: 0.7;
 }
 
 .twit {
@@ -172,16 +110,8 @@ footer img {
   justify-content: center;
   align-items: center;
 }
-.facebook {
-  color: #0866ff;
-  background: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 45px;
-}
 
-.instagram {
+/* .instagram {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -213,43 +143,315 @@ footer img {
     #bc1888 100%
   );
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+} */
+
+.read-more {
+  margin-top: 10px;
+  padding: 5px;
+  width: 150px;
+  height: 30px;
+  font-size: 14px;
+  text-align: center;
+  background-color: #0180b3;
+  border-radius: 8px;
+  cursor: pointer;
 }
 
-.home-sci a :hover {
-  opacity: 0.8;
+.read-more:hover,
+.read-more:hover a {
+  background-color: #00abf0;
+  color: #333;
 }
 
-.home-sci a:hover::before {
+.read-more a {
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  font-family: sans-serif;
+}
+
+.facebook,
+.instagram {
+  font-size: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.facebook {
+  color: #0866ff;
+}
+
+.instagram {
+  background: linear-gradient(
+    45deg,
+    #f09433 0%,
+    #e6683c 25%,
+    #dc2743 50%,
+    #cc2366 75%,
+    #bc1888 100%
+  );
+  color: #fff;
+  border-radius: 12px;
+}
+
+.about-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  padding: 20px;
+}
+
+.about-img-container img {
+  max-width: 350px;
+  max-height: 450px;
+  border-radius: 12px;
+}
+
+.about-about-me {
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  row-gap: 30px;
+}
+
+.about-icons-container {
+  display: flex;
+  justify-content: start;
+  font-size: 12px;
+  height: 40px;
+  gap: 10px;
+}
+
+.react-icons {
+  color: #333;
+  cursor: pointer;
+  vertical-align: middle;
+  width: 2.5em;
+  height: 2.5em;
+}
+
+.about-special-icon {
+  display: flex;
+  align-items: center;
+  padding-bottom: 20px;
+  column-gap: 20px;
+}
+
+.facebook:hover {
+  color: #0866ff;
+}
+
+.instagram:hover {
+  background: -moz-linear-gradient(
+    45deg,
+    #f09433 0%,
+    #e6683c 25%,
+    #dc2743 50%,
+    #cc2366 75%,
+    #bc1888 100%
+  );
+  background: -webkit-linear-gradient(
+    45deg,
+    #f09433 0%,
+    #e6683c 25%,
+    #dc2743 50%,
+    #cc2366 75%,
+    #bc1888 100%
+  );
+  background: linear-gradient(
+    45deg,
+    #f09433 0%,
+    #e6683c 25%,
+    #dc2743 50%,
+    #cc2366 75%,
+    #bc1888 100%
+  );
+}
+
+.twitter:hover {
+  color: #249ef0;
+}
+
+.about-special-icon svg:hover {
+  color: #f20000;
+}
+
+#about-likes {
+  font-size: 22px;
+}
+
+.about-back-button {
+  padding: 10px;
+  background-color: #a5e6ba;
+  text-align: center;
+  border-radius: 8px;
+  width: 60px;
+  cursor: pointer;
+}
+
+.about-back-button a {
+  outline: none;
+  text-decoration: none;
+  color: #333;
+  border: none;
+  background: none;
+  font-size: 15px;
+}
+
+.about-likes {
+  line-height: 15px;
+  text-align: center;
+}
+
+.popup {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 200px;
+  background-color: aquamarine;
+  text-align: center;
+  border-radius: 12px;
+  opacity: 0.9;
+  display: none;
+  z-index: 10;
+}
+
+.popup p {
+  font-size: 22px;
+}
+.qr {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 400px;
+  text-align: center;
+  border-radius: 12px;
+  display: none;
+  z-index: 10;
+  background-color: #dded;
+  display: none;
+  cursor: pointer;
+}
+
+.button {
+  position: absolute;
+  right: 10px;
+  top: 5px;
+  border: none;
+  background: none;
+  font-size: 15px;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
+  height: 965px;
+  background-color: rgba(0, 0, 0, 0.6);
+  filter: blur(10px);
+  z-index: 2;
 }
 
-@media (max-width: 500px) {
-  .img-container {
-    grid-template-columns: 1fr;
-    padding: 20px 0px 20px 20px;
+.hidden {
+  display: none;
+}
+
+.reset {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  padding: 10px;
+  border: none;
+  color: #333;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 8px;
+  opacity: 0;
+}
+
+.mail {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 480px;
+  height: 300px;
+  text-align: center;
+  background-color: #ddd;
+  border-radius: 12px;
+  opacity: 0.9;
+  display: none;
+
+  z-index: 10;
+}
+
+.inside-mailbox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.active {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 1135px) {
+  .about-container {
     gap: 20px;
   }
+}
 
-  .about-lasha,
-  .about-mirza,
-  .about-jano,
-  .about-kniaz,
-  .about-toko {
+@media (min-width: 650px) {
+  body {
+    overflow: hidden;
+  }
+}
+
+@media (max-width: 650px) {
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  /* 
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+  } */
+
+  ::-webkit-scrollbar-thumb {
+    background: #a8a8a8;
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #ffeb00;
+  }
+
+  .section {
+    grid-template-columns: 1fr;
+    padding: 10px 0px 20px 20px;
+  }
+
+  .about-student {
     left: 210px;
   }
 
-  .lasha img,
-  .mirza img,
-  .jano img,
-  .kniaz img,
-  .toko img {
+  .student img {
     opacity: 1;
   }
 
   .home-sci {
-    position: absolute;
-    bottom: 7px;
-    right: 0px;
+    display: inline;
     width: 150px;
     display: flex;
     justify-content: start;
@@ -258,20 +460,133 @@ footer img {
   }
 
   .home-sci a {
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
+    width: 40px;
+    height: 40px;
     text-decoration: none;
     z-index: 1;
     overflow: hidden;
   }
 
-  .instagram {
-    font-size: 25px;
+  .home-sci a:hover {
+    opacity: 0.7;
   }
 
-  .facebook,
-  .twitter {
-    font-size: 30px;
+  .about-img-container img {
+    max-width: 300px;
+    max-height: 400px;
+    border-radius: 12px;
+  }
+  .about-container {
+    grid-template-columns: 1fr;
+    padding: 10px;
+    row-gap: 10px;
+  }
+
+  .about-about-me {
+    row-gap: 10px;
+  }
+
+  .about-icons-container {
+    row-gap: 10px;
+    justify-content: center;
+    align-items: center;
+    /* flex-wrap: wrap; */
+  }
+
+  .about-special-icon {
+    padding: 0px;
+    justify-content: center;
+    justify-content: center;
+  }
+
+  .popup {
+    width: 300px;
+    height: 160px;
+    top: 70%;
+  }
+
+  .popup p {
+    font-size: 20px;
+  }
+
+  .about-footer {
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+    align-items: center;
+  }
+  .about-reset {
+    bottom: -175px;
+  }
+}
+
+@media (max-width: 500px) {
+  .mail {
+    width: 95%;
+    top: 70%;
+  }
+
+  .qr {
+    top: 70%;
+  }
+  .inside-mailbox {
+    width: 90%;
+  }
+  .inside-mailbox h1 {
+    font-size: 25px;
+  }
+}
+
+@media (max-width: 426px) {
+  .about-img-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .about-about-me {
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media (max-width: 400px) {
+  .section {
+    padding-left: 10px;
+  }
+
+  .home-sci {
+    bottom: -1px;
+    right: 0px;
+    width: 130px;
+  }
+
+  .read-more {
+    width: 110px;
+  }
+
+  .about-reset {
+    bottom: -235px;
+  }
+}
+
+@media (max-width: 387px) {
+  .inside-mailbox {
+    width: 80%;
+  }
+  .inside-mailbox h1 {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 370px) {
+  .home-sci {
+    gap: 5px;
+    width: 120px;
+  }
+
+  .section {
+    padding-left: 5px;
+    gap: 10px;
   }
 }
